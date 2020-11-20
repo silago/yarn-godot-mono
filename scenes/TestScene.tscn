@@ -1,0 +1,16 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scripts/tools/yarn-godot/YarnController.cs" type="Script" id=1]
+[ext_resource path="res://scripts/tools/yarn-godot/YarnOptionsController.cs" type="Script" id=2]
+[ext_resource path="res://assets/yarn/prefabs/YarnOption.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scripts/tools/yarn-godot/yarn_controller.gd" type="Script" id=4]
+
+[node name="Yarn" type="Node"]
+
+[node name="YarnDialogueController" type="Node" parent="."]
+script = ExtResource( 4 )
+cs_controller = ExtResource( 1 )
+
+[node name="YarnOptionsController" type="Node" parent="."]
+script = ExtResource( 2 )
+_optionNode = ExtResource( 3 )

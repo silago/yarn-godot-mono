@@ -1,0 +1,54 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/silago/godot/yarn-spinner-godot/yarn-spinner-godot.csproj": {}
+  },
+  "projects": {
+    "/home/silago/godot/yarn-spinner-godot/yarn-spinner-godot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/silago/godot/yarn-spinner-godot/yarn-spinner-godot.csproj",
+        "projectName": "yarn-spinner-godot",
+        "projectPath": "/home/silago/godot/yarn-spinner-godot/yarn-spinner-godot.csproj",
+        "packagesPath": "/home/silago/.nuget/packages/",
+        "outputPath": "/home/silago/godot/yarn-spinner-godot/.mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/home/silago/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[15.0.8, )"
+            },
+            "Microsoft.NETFramework.ReferenceAssemblies": {
+              "target": "Package",
+              "version": "[1.0.0, )",
+              "autoReferenced": true
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.108/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
