@@ -1,0 +1,13 @@
+[remap]
+
+importer="YARN"
+type="YARNData"
+path="res://.godot/imported/Sally.yarn-287d1e8f6c0479d8f8bb7a52081c574d.res"
+
+[deps]
+
+source_file="res://assets/yarn/Sally.yarn"
+dest_files=[ "res://.godot/imported/Sally.yarn-287d1e8f6c0479d8f8bb7a52081c574d.res" ]
+
+[params]
+

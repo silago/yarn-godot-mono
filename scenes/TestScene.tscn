@@ -1,16 +1,23 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scripts/tools/yarn-godot/YarnController.cs" type="Script" id=1]
 [ext_resource path="res://scripts/tools/yarn-godot/YarnOptionsController.cs" type="Script" id=2]
 [ext_resource path="res://assets/yarn/prefabs/YarnOption.tscn" type="PackedScene" id=3]
-[ext_resource path="res://scripts/tools/yarn-godot/yarn_controller.gd" type="Script" id=4]
+[ext_resource path="res://assets/yarn/Sally.yarn" type="YARNData" id=4]
+[ext_resource path="res://scripts/tools/yarn-godot/YarnTester.cs" type="Script" id=5]
 
 [node name="Yarn" type="Node"]
+script = null
 
 [node name="YarnDialogueController" type="Node" parent="."]
-script = ExtResource( 4 )
-cs_controller = ExtResource( 1 )
+process_priority = 1
+script = ExtResource( 1 )
+Datas = [ ExtResource( 4 ) ]
 
 [node name="YarnOptionsController" type="Node" parent="."]
 script = ExtResource( 2 )
 _optionNode = ExtResource( 3 )
+
+[node name="Node" type="Node" parent="."]
+script = ExtResource( 5 )
+start = "Sally"

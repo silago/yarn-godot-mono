@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "dgSpecHash": "zXbB+kppwXAgF6QHS7+4pUAbn+XaTJmjJ0FcgPjVZw/j1UD4rvfw/q6EPE2xCYUF80cQ8v8hA1H5eaqaQt7Zpw==",
+  "success": true,
+  "projectFilePath": "/home/silago/work/yarn-godot-mono/yarn-spinner-godot.csproj",
+  "expectedPackageFiles": [
+    "/home/silago/.nuget/packages/csvhelper/15.0.8/csvhelper.15.0.8.nupkg.sha512",
+    "/home/silago/.nuget/packages/microsoft.bcl.asyncinterfaces/1.1.0/microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
+    "/home/silago/.nuget/packages/microsoft.csharp/4.5.0/microsoft.csharp.4.5.0.nupkg.sha512",
+    "/home/silago/.nuget/packages/system.runtime.compilerservices.unsafe/4.5.2/system.runtime.compilerservices.unsafe.4.5.2.nupkg.sha512",
+    "/home/silago/.nuget/packages/system.threading.tasks.extensions/4.5.2/system.threading.tasks.extensions.4.5.2.nupkg.sha512"
+  ],
+  "logs": []
+}

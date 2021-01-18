@@ -2,23 +2,24 @@ using Godot;
 using Events;
 
 public class YarnDialogueOptionNode : Button {
-    int optionId;
-    public void Init(int optionId, string text) {
-        this.optionId = optionId;
-        this.Text = text;
-        this.Connect("pressed", this, nameof(OnPressed) );
-    }
+	int optionId;
+	public void Init(int optionId, string text) {
+		this.optionId = optionId;
+		this.Text = text;
 
-    public override void _EnterTree() {
-        this.SubscribeOnce<OptionSelectedMessage>( _ => QueueFree() );
-    }
+		this.Connect("pressed", new Callable(this, nameof(OnPressed)));
+	}
 
-    public override void _ExitTree() {
-    }
-    
-    void OnPressed()
-    {
-        this.SendEvent( new OptionSelectedMessage { ID = optionId } );
-    }
+	public override void _EnterTree() {
+		this.SubscribeOnce<OptionSelectedMessage>( _ => QueueFree() );
+	}
+
+	public override void _ExitTree() {
+	}
+	
+	void OnPressed()
+	{
+		this.SendEvent( new OptionSelectedMessage { ID = optionId } );
+	}
 
 }

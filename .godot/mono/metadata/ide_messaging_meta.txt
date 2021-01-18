@@ -1,0 +1,2 @@
+﻿38545
+/home/silago/sources/godot/bin/godot.linuxbsd.tools.64.mono

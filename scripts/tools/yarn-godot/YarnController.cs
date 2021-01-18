@@ -7,17 +7,13 @@ using Events;
 
 public class YarnController : Godot.Node {
 	[Export]
-	public Godot.Collections.Array<TextFile> FF2;
-
-	[Export(PropertyHint.File)]
-	public Godot.Collections.Array<Resource> FilePathes2;
-
-	[Export]
-	public Godot.Collections.Array<string> FilePathes;
+	public Godot.Collections.Array<YARNData> Datas;
 
 	Dialogue dialogue;
 	bool isWaitingForAnswer = false;
-	IDictionary<string, StringInfo> stringTable;
+	IDictionary<string, StringInfo> stringTable = new Dictionary<string, StringInfo>();
+    bool isReady = false;
+
 
 	public override void _Ready() {
 		LoadCompileAndLoad();
@@ -26,23 +22,28 @@ public class YarnController : Godot.Node {
 	void LoadCompileAndLoad() 
 	{
 		var compiledProgramms = new List<Program>();
-		foreach(string path in FilePathes) {
-			Program program;
-			var file = new Godot.File();
-			file.Open(path, File.ModeFlags.Read);
-			var absolutePath = file.GetPathAbsolute();
-			Compiler.CompileFile(absolutePath, out program, out IDictionary<string, StringInfo> strings);
+		foreach(YARNData data in Datas) {
+			Program program = new Program();
+			//var file = new Godot.File();
+			//file.Open(data.ResourcePath, File.ModeFlags.Read);
+			//GD.Print("absolute path is",  file.GetPathAbsolute());
+			var path = ProjectSettings.GlobalizePath(data.ResourcePath);
+			GD.Print("path is ",path);
+			Status status = Compiler.CompileFile(path, out program, out IDictionary<string, StringInfo> strings);
 			foreach(var str in strings) {
 			   stringTable.Add(str.Key, str.Value); 
 			}
 			compiledProgramms.Add(program);
+			GD.Print("loaded " , program.Name, "with status " , status);
 		}
 		var resultProgram = Program.Combine(compiledProgramms.ToArray());
 		dialogue = InitDialogue();
+        dialogue.SetProgram(resultProgram);
 		InitFunctions(dialogue);
 
 		this.Subscribe<StartDialogueMessage>(OnStartDialogueMessage);
 		this.Subscribe<OptionSelectedMessage>(OnOptionSelectMessage);
+        
 	}
 
 	private void OnOptionSelectMessage(OptionSelectedMessage obj)
@@ -51,6 +52,7 @@ public class YarnController : Godot.Node {
 	}
 	private void OnStartDialogueMessage(StartDialogueMessage obj)
 	{
+		GD.Print("run dialogue ", obj.NodeName);
 		Run(obj.NodeName);
 	}
 	public override void _ExitTree() 
@@ -145,8 +147,10 @@ public class YarnController : Godot.Node {
 	}
 	
 	Dialogue.HandlerExecutionType LineHandler(Line line) {
+		
 		stringTable.TryGetValue(line.ID, out var info);
 		var text = info.text;
+		this.SendEvent(new NewLineMessage { Text = text });
 		GD.Print(text);
 		//return Dialogue.HandlerExecutionType.PauseExecution;
 		return Dialogue.HandlerExecutionType.ContinueExecution;

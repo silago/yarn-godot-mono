@@ -8,15 +8,10 @@
 
 config_version=4
 
-_global_script_classes=[  ]
-_global_script_class_icons={
-
-}
-
 [application]
 
 config/name="yarn-spinner-godot"
-run/main_scene="res://scenes/TestScene.tscn"
+run/main_scene="res://scenes/new scene.tscn"
 config/icon="res://icon.png"
 
 [display]

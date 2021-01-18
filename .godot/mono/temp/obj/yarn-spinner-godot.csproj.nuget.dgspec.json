@@ -1,0 +1,52 @@
+{
+  "format": 1,
+  "restore": {
+    "/home/silago/work/yarn-godot-mono/yarn-spinner-godot.csproj": {}
+  },
+  "projects": {
+    "/home/silago/work/yarn-godot-mono/yarn-spinner-godot.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/home/silago/work/yarn-godot-mono/yarn-spinner-godot.csproj",
+        "projectName": "yarn-spinner-godot",
+        "projectPath": "/home/silago/work/yarn-godot-mono/yarn-spinner-godot.csproj",
+        "packagesPath": "/home/silago/.nuget/packages/",
+        "outputPath": "/home/silago/work/yarn-godot-mono/.godot/mono/temp/obj/",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "/home/silago/.local/share/godot/mono/GodotNuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "/home/silago/.config/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net472"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net472": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net472": {
+          "dependencies": {
+            "CsvHelper": {
+              "target": "Package",
+              "version": "[15.0.8, )"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.108/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
